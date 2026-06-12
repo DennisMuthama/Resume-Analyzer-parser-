@@ -1,148 +1,245 @@
-# 📄 Resume Parser
+<div align="center">
 
-> Upload a resume. Get the important stuff — instantly.
+```
+██████╗ ███████╗███████╗██╗   ██╗███╗   ███╗███████╗    ██████╗  █████╗ ██████╗ ███████╗███████╗██████╗
+██╔══██╗██╔════╝██╔════╝██║   ██║████╗ ████║██╔════╝    ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝██╔══██╗
+██████╔╝█████╗  ███████╗██║   ██║██╔████╔██║█████╗      ██████╔╝███████║██████╔╝███████╗█████╗  ██████╔╝
+██╔══██╗██╔══╝  ╚════██║██║   ██║██║╚██╔╝██║██╔══╝      ██╔═══╝ ██╔══██║██╔══██╗╚════██║██╔══╝  ██╔══██╗
+██║  ██║███████╗███████║╚██████╔╝██║ ╚═╝ ██║███████╗    ██║     ██║  ██║██║  ██║███████║███████╗██║  ██║
+╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝    ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
+```
 
-A smart, multi-format resume parsing web app built with **Python** and **Streamlit**. Paste your resume text or upload a PDF/DOCX file and the parser pulls out the key details in seconds — no manual reading required.
+### _Drop a resume. Get the data. No reading required._
 
----
+<br/>
 
-## 📸 Screenshots
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![spaCy](https://img.shields.io/badge/spaCy-09A3D5?style=for-the-badge&logo=spacy&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-00C851?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-<!-- Add your screenshots here -->
-
-### Upload Screen
-> _Screenshot: The main upload interface_
-
-![Upload Screen](screenshots/upload_screen.png)
-
-### Parsed Results
-> _Screenshot: Extracted resume data displayed on screen_
-
-![Parsed Results](screenshots/parsed_results.png)
-
-### Text Paste Mode
-> _Screenshot: Pasting raw resume text directly into the app_
-
-![Paste Mode](screenshots/paste_mode.png)
+</div>
 
 ---
 
-## ✨ Features
+## ❓ What is this?
 
-- 📤 **Multi-format support** — Upload PDF, DOCX, TXT, or simply paste raw resume text
-- 👤 **Contact extraction** — Pulls name, email, location, LinkedIn URL, and other relevant links
-- 💼 **Job title detection** — Identifies the candidate's current or most recent occupation title
-- 🏢 **Work experience parsing** — Extracts work history including companies, roles, and durations
-- ⚡ **Instant results** — Clean, structured output displayed right in the browser
-- 🧠 **Hybrid parsing engine** — Combines regex patterns, NLP (spaCy/NLTK), and AI-based extraction for higher accuracy
+Most resume parsers are either locked behind expensive APIs or produce messy, unreliable output. **Resume Parser** is a lightweight, locally-runnable Streamlit web app that takes any resume — PDF, DOCX, TXT, or plain pasted text — and surgically extracts the information that actually matters.
+
+No subscriptions. No black-box APIs you can't control. Just clean, structured data from a resume in seconds.
+
+---
+
+## 🖼️ Screenshots
+
+<table>
+  <tr>
+    <td align="center"><b>📂 Upload Interface</b></td>
+    <td align="center"><b>📋 Parsed Output</b></td>
+  </tr>
+  <tr>
+    <td>
+      <!-- Replace with your screenshot -->
+      <img src="screenshots/upload.png" alt="Upload Screen" width="100%"/>
+    </td>
+    <td>
+      <!-- Replace with your screenshot -->
+      <img src="screenshots/results.png" alt="Results Screen" width="100%"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><b>✏️ Paste Mode</b></td>
+    <td align="center"><b>📊 Extracted Fields View</b></td>
+  </tr>
+  <tr>
+    <td>
+      <!-- Replace with your screenshot -->
+      <img src="screenshots/paste_mode.png" alt="Paste Mode" width="100%"/>
+    </td>
+    <td>
+      <!-- Replace with your screenshot -->
+      <img src="screenshots/fields_view.png" alt="Fields View" width="100%"/>
+    </td>
+  </tr>
+</table>
+
+> 📌 _Add your screenshots to a `/screenshots` folder in the project root and the table above will render them automatically on GitHub._
+
+---
+
+## ⚙️ What it extracts
+
+The parser targets the fields that hiring tools, recruiters, and ATS systems care about most:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    EXTRACTED FIELDS                         │
+├──────────────────────┬──────────────────────────────────────┤
+│  👤  Full Name        │  Detected from resume header         │
+│  📧  Email Address    │  Primary contact email               │
+│  📍  Location         │  City / Country / Region             │
+│  🔗  LinkedIn URL     │  Profile link                        │
+│  🌐  Other Links      │  GitHub, portfolio, personal site    │
+│  💼  Job Title        │  Current or most recent role         │
+│  🏢  Work Experience  │  Companies · Roles · Durations       │
+└──────────────────────┴──────────────────────────────────────┘
+```
+
+---
+
+## 🧠 How the extraction actually works
+
+This isn't a single-method parser — it runs a **three-layer hybrid pipeline** to maximise accuracy across different resume styles and formats:
+
+```
+INPUT (PDF / DOCX / TXT / Paste)
+        │
+        ▼
+┌───────────────────┐
+│  Text Extraction  │  ← PyMuPDF / pdfplumber (PDF) · python-docx (DOCX) · raw string (TXT/paste)
+└────────┬──────────┘
+         │
+         ▼
+┌───────────────────┐
+│  Regex Layer      │  ← Fast, deterministic pattern matching for emails, URLs, phones
+└────────┬──────────┘
+         │
+         ▼
+┌───────────────────┐
+│  NLP Layer        │  ← spaCy Named Entity Recognition + NLTK for names, orgs, locations
+└────────┬──────────┘
+         │
+         ▼
+┌───────────────────┐
+│  AI Refinement    │  ← LLM cleans up ambiguous fields where NLP is uncertain
+└────────┬──────────┘
+         │
+         ▼
+  STRUCTURED OUTPUT (displayed in Streamlit UI)
+```
+
+Each layer feeds into the next — regex handles the clear-cut stuff, NLP picks up semantic patterns, and AI fills the gaps.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
-| UI / Frontend | Streamlit |
-| Language | Python 3.x |
-| PDF Parsing | PyMuPDF / pdfplumber |
-| DOCX Parsing | python-docx |
-| NLP | spaCy, NLTK |
-| AI Extraction | Gemini / OpenAI API |
-| Pattern Matching | Regex |
+| What | How |
+|------|-----|
+| **App Framework** | Streamlit |
+| **Language** | Python 3.10+ |
+| **PDF Extraction** | PyMuPDF · pdfplumber |
+| **DOCX Extraction** | python-docx |
+| **NLP Engine** | spaCy · NLTK |
+| **AI Layer** | Gemini API · OpenAI API |
+| **Pattern Matching** | Regex (re module) |
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Running it locally
 
-### Prerequisites
-
-Make sure you have Python 3.8+ installed.
-
-### Installation
-
+**1. Clone the repo**
 ```bash
-# Clone the repository
 git clone https://github.com/your-username/resume-parser.git
 cd resume-parser
+```
 
-# Create a virtual environment
+**2. Set up a virtual environment**
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+# macOS / Linux
+source venv/bin/activate
+
+# Windows
+venv\Scripts\activate
+```
+
+**3. Install dependencies**
+```bash
 pip install -r requirements.txt
 ```
 
-### Running the App
+**4. (Optional) Add your API key**
 
+If you're using the AI refinement layer, create a `.env` file:
+```env
+GEMINI_API_KEY=your_key_here
+# or
+OPENAI_API_KEY=your_key_here
+```
+
+**5. Launch**
 ```bash
 streamlit run app.py
 ```
 
-Then open your browser and go to `http://localhost:8501`.
+Visit `http://localhost:8501` — that's it.
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
 resume-parser/
 │
-├── app.py                  # Main Streamlit app
+├── app.py                    # Streamlit entry point — UI + orchestration
+│
 ├── parser/
-│   ├── extractor.py        # Core extraction logic
-│   ├── file_handler.py     # PDF, DOCX, and text processing
-│   └── utils.py            # Helper functions
+│   ├── __init__.py
+│   ├── extractor.py          # Main extraction logic (regex + NLP + AI pipeline)
+│   ├── file_handler.py       # PDF, DOCX, TXT reading & text normalization
+│   └── utils.py              # Shared helpers (cleaning, formatting, validation)
+│
+├── screenshots/              # 📸 Drop your app screenshots here
+│
+├── .env.example              # Template for API keys
 ├── requirements.txt
 └── README.md
 ```
 
-> _Adjust the structure above to match your actual project layout._
+> Update the structure above to match your actual layout before publishing.
 
 ---
 
-## 🧪 How It Works
+## 🗺️ Roadmap
 
-1. **Input** — User uploads a resume file (PDF/DOCX/TXT) or pastes text directly
-2. **Text extraction** — Raw text is pulled from the file using the appropriate parser
-3. **NLP + Regex pipeline** — Sections are identified and key fields are located using a combination of pattern matching and NLP models
-4. **AI refinement** — Where needed, an AI model cleans up ambiguous or complex extractions
-5. **Output** — Structured data is displayed cleanly in the Streamlit UI
+Things already working:
 
----
+- [x] PDF, DOCX, TXT upload support
+- [x] Raw text paste mode
+- [x] Name, email, location, LinkedIn, links extraction
+- [x] Job title detection
+- [x] Work experience parsing
 
-## 📌 Extracted Fields
+On the horizon:
 
-| Field | Description |
-|---|---|
-| Full Name | Candidate's full name |
-| Email | Primary email address |
-| Location | City, country or region |
-| LinkedIn | LinkedIn profile URL |
-| Other Links | GitHub, portfolio, or other URLs |
-| Job Title | Current or most recent occupation title |
-| Work Experience | Company names, roles, and time periods |
-
----
-
-## 🔮 Future Improvements
-
-- [ ] Skills extraction (technical + soft skills)
+- [ ] Skills extraction — technical and soft skills
 - [ ] Education history parsing
-- [ ] Export parsed data as JSON or CSV
-- [ ] Support for more file formats (RTF, image-based resumes via OCR)
-- [ ] Resume scoring / ATS compatibility check
+- [ ] Export results as JSON / CSV
+- [ ] OCR support for scanned/image-based resumes
+- [ ] ATS compatibility scoring
+- [ ] Batch processing — parse multiple resumes at once
+- [ ] REST API wrapper for integration into other tools
 
 ---
 
-## 👨‍💻 Author
+## 👨🏾‍💻 Built by
 
-Built solo by **[Your Name]**  
-📧 [your-email@example.com]  
-🔗 [LinkedIn](https://linkedin.com/in/your-profile) | [GitHub](https://github.com/your-username)
+**Dennis Muthama** — Software Engineering student, builder, freelancer.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-dennismuthama-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/dennismuthama)
+[![GitHub](https://img.shields.io/badge/GitHub-dennismuthama-181717?style=flat-square&logo=github)](https://github.com/dennismuthama)
 
 ---
 
-## 📝 License
+## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+[MIT](LICENSE) — free to use, modify, and build on.
+
+---
+
+<div align="center">
+  <sub>If this saved you some time, a ⭐ on the repo goes a long way.</sub>
+</div>
