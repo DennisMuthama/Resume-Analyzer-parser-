@@ -47,7 +47,7 @@ They can search the requirements and get the candidates With those particular as
     </td>
     <td>
       <!-- Replace with your screenshot -->
-      <img src="screenshots/results.png" alt="Results Screen" width="100%"/>
+      <img src="ExtractedDetails.png" alt="Results Screen" width="100%"/>
     </td>
   </tr>
   <tr>
