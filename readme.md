@@ -24,10 +24,12 @@
 ---
 
 ## ❓ What is this?
-
+  **MAINLY FOR EMPLOYERS**
 Most resume parsers are either locked behind expensive APIs or produce messy, unreliable output. **Resume Parser** is a lightweight, locally-runnable Streamlit web app that takes any resume — PDF, DOCX, TXT, or plain pasted text — and surgically extracts the information that actually matters.
 
-No subscriptions. No black-box APIs you can't control. Just clean, structured data from a resume in seconds.
+Once all that information is extracted it is placed in a downloadable CSV file and then it will enable the employer to sort with the needs they want.<br>
+They can search the requirements and get the candidates With those particular aspects.<br>
+  The aspects can vary from candidates who have worked at partcular organization,gone to a certain school,years of experience.....you name any metric you want to filter the candidates with 
 
 ---
 
@@ -179,27 +181,7 @@ Visit `http://localhost:8501` — that's it.
 
 ---
 
-## 📁 Project Structure
 
-```
-resume-parser/
-│
-├── app.py                    # Streamlit entry point — UI + orchestration
-│
-├── parser/
-│   ├── __init__.py
-│   ├── extractor.py          # Main extraction logic (regex + NLP + AI pipeline)
-│   ├── file_handler.py       # PDF, DOCX, TXT reading & text normalization
-│   └── utils.py              # Shared helpers (cleaning, formatting, validation)
-│
-├── screenshots/              # 📸 Drop your app screenshots here
-│
-├── .env.example              # Template for API keys
-├── requirements.txt
-└── README.md
-```
-
-> Update the structure above to match your actual layout before publishing.
 
 ---
 
@@ -213,26 +195,9 @@ Things already working:
 - [x] Job title detection
 - [x] Work experience parsing
 
-On the horizon:
 
-- [ ] Skills extraction — technical and soft skills
-- [ ] Education history parsing
-- [ ] Export results as JSON / CSV
-- [ ] OCR support for scanned/image-based resumes
-- [ ] ATS compatibility scoring
-- [ ] Batch processing — parse multiple resumes at once
-- [ ] REST API wrapper for integration into other tools
 
----
 
-## 👨🏾‍💻 Built by
-
-**Dennis Muthama** — Software Engineering student, builder, freelancer.
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-dennismuthama-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/dennismuthama)
-[![GitHub](https://img.shields.io/badge/GitHub-dennismuthama-181717?style=flat-square&logo=github)](https://github.com/dennismuthama)
-
----
 
 ## 📄 License
 
@@ -241,5 +206,5 @@ On the horizon:
 ---
 
 <div align="center">
-  <sub>If this saved you some time, a ⭐ on the repo goes a long way.</sub>
+ 
 </div>
