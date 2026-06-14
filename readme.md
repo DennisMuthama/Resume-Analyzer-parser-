@@ -33,7 +33,9 @@ They can search the requirements and get the candidates With those particular as
 
 ---
 
-## 🖼️ Screenshots
+## 🖼️ Screenshots  
+     **website dashboard**
+       <img src="Dashboard.png" alt="Paste Mode" width="100%"/>
 
 <table>
   <tr>
