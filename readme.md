@@ -53,7 +53,7 @@ They can search the requirements and get the candidates With those particular as
     </td>
   </tr>
   <tr>
-    <td align="center"><b>✏️ Work experience extraded</b></td>
+    <td align="center"><b>✏️ Work experience   EXTRACTED</b></td>
     <td align="center"><b>📊 Extracted CSV File for downloading</b></td>
   </tr>
   <tr>
