@@ -57,7 +57,7 @@ They can search the requirements and get the candidates With those particular as
   <tr>
     <td>
       <!-- Replace with your screenshot -->
-      <img src="screenshots/paste_mode.png" alt="Paste Mode" width="100%"/>
+      <img src="Extracted_experience.png" alt="Paste Mode" width="100%"/>
     </td>
     <td>
       <!-- Replace with your screenshot -->
