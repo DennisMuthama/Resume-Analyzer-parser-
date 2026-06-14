@@ -33,7 +33,6 @@ They can search the requirements and get the candidates With those particular as
 
 ---
 **website dashboard**
-Landing Page
       ![Dashboard](dashboard.png)
 
 ## 🖼️ Screenshots  
@@ -69,7 +68,7 @@ Landing Page
   </tr>
 </table>
 
-> 📌 _Add your screenshots to a `/screenshots` folder in the project root and the table above will render them automatically on GitHub._
+
 
 ---
 
@@ -188,9 +187,7 @@ Visit `http://localhost:8501` — that's it.
 
 ---
 
-## 🗺️ Roadmap
-
-Things already working:
+## 🗺️ Features
 
 - [x] PDF, DOCX, TXT upload support
 - [x] Raw text paste mode
