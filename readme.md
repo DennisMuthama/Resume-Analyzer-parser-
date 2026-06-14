@@ -32,10 +32,11 @@ They can search the requirements and get the candidates With those particular as
   The aspects can vary from candidates who have worked at partcular organization,gone to a certain school,years of experience.....you name any metric you want to filter the candidates with 
 
 ---
+**website dashboard**
+Landing Page
+      ![Dashboard](dashboard.png)
 
 ## 🖼️ Screenshots  
-     **website dashboard**
-       <img src="Dashboard.png" alt="Paste Mode" width="100%"/>
 
 <table>
   <tr>
@@ -63,7 +64,7 @@ They can search the requirements and get the candidates With those particular as
     </td>
     <td>
       <!-- Replace with your screenshot -->
-      <img src="screenshots/fields_view.png" alt="Fields View" width="100%"/>
+      <img src="Screenshot 2026-06-12 235658.png" alt="Fields View" width="100%"/>
     </td>
   </tr>
 </table>
