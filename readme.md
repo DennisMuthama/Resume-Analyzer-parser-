@@ -43,7 +43,7 @@ They can search the requirements and get the candidates With those particular as
   <tr>
     <td>
       <!-- Replace with your screenshot -->
-      <img src="screenshots/upload.png" alt="Upload Screen" width="100%"/>
+      <img src="upload.png" alt="Upload Screen" width="100%"/>
     </td>
     <td>
       <!-- Replace with your screenshot -->
