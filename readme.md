@@ -17,7 +17,7 @@
   **MAINLY FOR EMPLOYERS**
 Most resume parsers are either locked behind expensive APIs or produce messy, unreliable output. **Resume Parser** is a lightweight, locally-runnable Streamlit web app that takes any resume — PDF, DOCX, TXT, or plain pasted text — and surgically extracts the information that actually matters.
 
-Once all that information is extracted it is placed in a downloadable CSV file and then it will enable the employer to sort with the needs they want.<br>
+Once all that information is extracted it is placed in a downloadable CSV file and then it will enable the employer to sort with the requirements they want the candidate to have.<br>
 They can search the requirements and get the candidates With those particular aspects.<br>
   The aspects can vary from candidates who have worked at partcular organization,gone to a certain school,years of experience.....you name any metric you want to filter the candidates with 
 
