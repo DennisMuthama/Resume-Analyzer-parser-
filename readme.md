@@ -19,7 +19,7 @@ Most resume parsers are either locked behind expensive APIs or produce messy, un
 
 Once all that information is extracted it is placed in a downloadable CSV file and then it will enable the employer to sort with the requirements they want the candidate to have.<br>
 They can search the requirements and get the candidates With those particular aspects.<br>
-  The aspects can vary from candidates who have worked at partcular organization,gone to a certain <b>school</b>,years of experience.....you name any metric you want to filter the candidates with 
+  The aspects can vary from candidates who have worked at partcular organization,gone to a certain <b>school</b>,<b>years of experience</b>.....you name any metric you want to filter the candidates with 
 
 ---
 **website dashboard**
