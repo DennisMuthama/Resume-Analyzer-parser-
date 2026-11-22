@@ -2,13 +2,11 @@
 
 <br/>
 
-# resume&nbsp;parser
+# resume parser
 
-<sub>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</sub>
+`resume.pdf` &nbsp;→&nbsp; `parse` &nbsp;→&nbsp; `{ structured: data }`
 
-**Drop a resume. Get the data.**
-<br/>
-<sub>No reading required.</sub>
+<sub>Drop a resume. Get the data. No reading required.</sub>
 
 <br/>
 
