@@ -2,11 +2,11 @@
 
 <br/>
 
-# resume parser
+## resume parser
 
-`resume.pdf` &nbsp;→&nbsp; `parse` &nbsp;→&nbsp; `{ structured: data }`
-
-<sub>Drop a resume. Get the data. No reading required.</sub>
+```json
+{ "input": "resume.pdf", "output": "structured data", "reading": "not required" }
+```
 
 <br/>
 
